@@ -33,13 +33,13 @@ int	ft_len_printf(const char *format, va_list args, int len)
 			else if (*format == 's')
 				len += ft_printf_strlen(va_arg(args, char *));
 			else if (*format == 'd' || *format == 'i')
-				len += ft_nbrlen(va_arg(args, int), 1, 10);
+				len += ft_nbrlen_base_sign(va_arg(args, int), 1, 10);
 			else if (*format == 'u')
-				len += ft_nbrlen(va_arg(args, unsigned int), 0, 10);
+				len += ft_nbrlen_base_sign(va_arg(args, unsigned int), 0, 10);
 			else if (*format == 'p')
 				len += ft_hexlen((unsigned long)va_arg(args, void *));
 			else if (*format == 'x' || *format == 'X')
-				len += ft_nbrlen(va_arg(args, unsigned int), 0, 16);
+				len += ft_nbrlen_base_sign(va_arg(args, unsigned int), 0, 16);
 			if (*format == '%' || *format == 'c')
 				len++;
 		}

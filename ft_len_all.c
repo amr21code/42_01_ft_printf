@@ -37,29 +37,6 @@ int	ft_count_args_printf(const char *format)
 	return (count);
 }
 
-size_t	ft_nbrlen(long long nbr, int sign, int base)
-{
-	size_t	len;
-
-	len = 0;
-	if (sign)
-	{
-		if (nbr < 0)
-		{
-			len++;
-			nbr = -nbr;
-		}
-	}
-	if (nbr == 0)
-		len++;
-	while (nbr > 0)
-	{
-		nbr /= base;
-		len++;
-	}
-	return (len);
-}
-
 int	ft_printf_strlen(char *str)
 {
 	int	len;
